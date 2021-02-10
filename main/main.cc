@@ -9,7 +9,5 @@ int main(int argc, char** argv) {
       {"cmake", "https://cmake.org/"},    
   };
   std::cout << obj.dump(4) << std::endl;
-  std::cout<< greet(argv[1]) << std::endl;
-
-  std::cout << JEAN << std::endl;
+  std::cout<< greet("Maroun") << std::endl;
 }
