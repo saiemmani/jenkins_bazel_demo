@@ -1,0 +1,4 @@
+bazel-bin
+bazel-jenkins_demoApp
+bazel-out
+bazel-testlogs
