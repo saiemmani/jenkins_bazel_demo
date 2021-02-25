@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bazel build main:main'
+                sh 'bazel build //main:main'
             }
         }
         stage('Test') {
