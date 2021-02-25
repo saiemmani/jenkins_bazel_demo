@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh 'bazel test //test:test'
             }
         }
         stage('Deploy') {
