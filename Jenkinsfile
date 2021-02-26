@@ -12,6 +12,10 @@ pipeline {
                 sh 'bazel test //test:test'
             }
         }
+        stage('Linting'){
+            sh 'python3 format-code.py -r ./main'
+            sh 'echo $(pwd)'
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
