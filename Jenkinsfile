@@ -25,6 +25,11 @@ pipeline {
                 sh "git push origin master"
             }
         }
+        stage('Generate_documentation'){
+            steps{
+                sh 'python3 format-code.py -r ./main'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
