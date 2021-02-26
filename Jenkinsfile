@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Push'){
             steps{
-                sh 'git push'
+                sh 'git push --set-upstream origin master'
             }
         }
         stage('Deploy') {
