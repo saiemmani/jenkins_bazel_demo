@@ -1,0 +1,20 @@
+--- ./main/main.cc	2021-02-26 09:30:48.218678010 +0100
++++ ./linting/main.cc	2021-02-26 10:34:53.040711954 +0100
+@@ -1,13 +1,12 @@
+-#include "nlohmann/json.hpp"
+ #include "lib/service.h"
++#include "nlohmann/json.hpp"
+ #include <iostream>
+ 
+-
+-int main(int argc, char** argv) {
++int main(int argc, char **argv) {
+   nlohmann::json obj = {
+       {"bazel", "https://bazel.build"},
+-      {"cmake", "https://cmake.org/"},    
++      {"cmake", "https://cmake.org/"},
+   };
+   std::cout << obj.dump(4) << std::endl;
+-  std::cout<< greet("Maroun") << std::endl;
++  std::cout << greet("Maroun") << std::endl;
+ }
