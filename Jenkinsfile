@@ -14,6 +14,8 @@ pipeline {
         }
         stage('Linting'){
             steps{
+                sh 'git config user.name'
+                sh 'git config user.email'
                 sh 'python3 format-code.py -r ./main'
                 sh 'echo $(pwd)'
                 sh 'git add ./linting'
