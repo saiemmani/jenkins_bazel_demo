@@ -7,10 +7,8 @@ import shutil
 # Documentation template
 documentation_template = """
 ## {0}
-
 #### Files 
 [{1}]({2}) 
-
 #### Description 
 {3}
 #### Incoming messages 
@@ -120,7 +118,6 @@ def generate_param_data(text_data):
     """
     Generates the ISAAC_PARAM documentation using the comments written before it.
     Attempts to apply the same format as the ISAAC SDK.
-
     """
     return parse_arguments(text_data, regex_param_match_comment)
 
@@ -188,12 +185,11 @@ def main():
                             else:
                                 f = open(root + "/README.md", "w")
                             created_flag = True
-                        file_path_list = root.split("/")
                         # get_class_registration(source_code) returns a list of one element representing the
                         # registration name
                         name = str(class_registration[0].replace("::", "."))
                         hpp_file = file  # Add hpp file name to README
-                        reference = "../" + "/".join(file_path_list[-3:]) + "/" + file  # Add reference to hpp file name
+                        reference = "./" + file  # Add reference to hpp file name
                         description = generate_class_description(source_code)  # Add class description to README
                         rx = generate_rx_data(source_code)  # Add incoming messages to README
                         tx = generate_tx_data(source_code)  # Add outgoing messages to README
