@@ -22,6 +22,8 @@ pipeline {
         }
         stage('Push'){
             steps{
+                sh 'git config --global user.name "jean-khoury"'
+                sh 'git config --global user.email "jeankhoury_98@hotmail.com"'
                 sh 'git push --set-upstream origin master'
             }
         }
