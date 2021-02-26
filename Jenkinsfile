@@ -14,17 +14,15 @@ pipeline {
         }
         stage('Linting'){
             steps{
-                sh 'git config user.name'
-                sh 'git config user.email'
                 sh 'python3 format-code.py -r ./main'
                 sh 'echo $(pwd)'
-                sh 'git add ./linting'
-                sh 'git commit -m "Added Linting" '
             }
         }
         stage('Push'){
             steps{
-                sh 'git push --set-upstream origin master'
+                sh 'git add ./linting'
+                sh 'git commit -am "added linting"'
+                sh "git push origin master"
             }
         }
         stage('Deploy') {
