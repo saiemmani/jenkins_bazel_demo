@@ -1,0 +1,28 @@
+skinparam state {
+  BackgroundColor<<Operational>> LightGreen
+  BackgroundColor<<Error>> OrangeRed
+}
+' Definition of the States
+kStateInit :publish state init\nConnect to CAN\nreset the interface\nstart recvHandler\n/\n \n/\n
+kStateCheckConnection : update timer\nreset_counter = 3\n/\n\n/\n
+kStateResetInterface :publish state init\nisSuccess=false\nisError=false\n/\nreset interface\n/\n
+kStateReset :sendresetframe\nupdate timer\n/\n \n/\n
+kStateWaitForReset :send sync frame\n/\nsend sync frame \n/\n
+state kStateError<<Error>>:log error\npublish state error\nstop the recvHandler\ndisconnect the interface\n/\n\n/\n
+state kStateOperational<<Operational>> :publish state operational\n/\nsend sync frame\nsend battery state proto\n/\n 
+[*] --> kStateInit
+
+' Notes of the states
+' note left of kStateInit: Any state can transit to this state \n if requestReset = true
+
+' Transitions
+kStateInit --> kStateCheckConnection : \n/\n[isInitialized]
+kStateInit -left-> kStateError : \n/\n [isError]
+kStateCheckConnection --> kStateReset : \n/\n[BMS::isConnected()]
+kStateCheckConnection --> kStateError : update compError\n/\n[timeout]
+kStateReset --> kStateWaitForReset : \n/\n[timeout\nRESET_WAIT_TIME_S] 
+kStateWaitForReset --> kStateReset : --reset_counter \n/\n [timeout\nAFTER_RESET_WAIT_TIME_S] &&\n [!isMSWOn()] && \n[reset_counter != 0]
+kStateWaitForReset --> kStateError : \n/\n [timeout\nAFTER_RESET_WAIT_TIME_S] &&\n [!isMSWOn()] && \n [reset_counter == 0]
+kStateWaitForReset --> kStateOperational : \n/\n [[isMSWOn()]
+kStateOperational --> kStateError : \n/\n[!isMSWOn() ||\n!isConnected()]
+kStateError -right-> kStateInit :\n/\n[isResetRequested]

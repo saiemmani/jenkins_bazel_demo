@@ -1,0 +1,35 @@
+binary "reset" as rst
+binary "sync_frame" as sync_frame
+binary "bms_switch" as bms_switch
+binary "frames_from_bms" as frames_from_bms
+concise "state_machine" as SM
+
+@0
+SM is Init
+
+@+1.0
+SM is check_cnx
+
+@+1.5
+frames_from_bms is 1
+
+@+0.2
+SM is Reset
+rst is 1
+
+@+0.1
+rst is 0
+
+@+2.0
+sync_frame is 1
+SM is Wait_4_rst
+
+@+1.5
+bms_switch is 1
+SM is Operational
+
+@+4.0
+bms_switch is 0
+SM is Error
+
+@+1.0

@@ -1,0 +1,59 @@
+{
+  "name": "bms",
+  "modules": [
+    "//components/bms:bms_module"
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "name": "BMS",
+        "components": [
+          {
+            "name": "BMS",
+            "type": "str::Bms"
+          },
+          {
+            "name": "message_ledger",
+            "type": "isaac::alice::MessageLedger"
+          }
+        ]
+      }
+    ]
+  },
+  "config": {
+    "BMS": {
+      "BMS": {
+        "tick_period": "90ms",
+        "if_name": "can0"
+      }
+    },
+    "websight": {
+      "WebsightServer": {
+        "webroot": "packages/sight/webroot",
+        "assetroot": "/home/nvidia/isaac-lfs/sight/assets",
+        "port": 3000,
+        "ui_config": {
+          "windows": {
+            "Battery": {
+              "renderer": "plot",
+              "channels": [
+                {
+                  "name": "bms/BMS/BMS/battery.Ibatt"
+                },
+                {
+                  "name": "bms/BMS/BMS/battery.Ubatt"
+                },
+                {
+                  "name": "bms/BMS/BMS/battery.SOC"
+                },
+                {
+                  "name": "bms/BMS/BMS/battery.msw"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
