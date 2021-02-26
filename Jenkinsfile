@@ -22,8 +22,9 @@ pipeline {
         }
         stage('Push'){
             steps{
-                sh 'git config --global user.name "jean-khoury"'
-                sh 'git config --global user.email "jeankhoury_98@hotmail.com"'
+                hub config --global hub.protocol ssh
+                hub config --global user.email "jeankhoury_98@hotmail.com"
+                hub config --global user.name "jean-khoury"
                 sh 'git push --set-upstream origin master'
             }
         }
