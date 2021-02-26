@@ -1,0 +1,22 @@
+--- ./main/bms/CanRecvHandler.cpp	2021-02-26 11:58:53.706070320 +0100
++++ ./linting/CanRecvHandler.cpp	2021-02-26 11:58:57.090034464 +0100
+@@ -13,14 +13,10 @@
+ 
+ namespace str {
+ 
+-void CanRecvHandler::start() {
+-  tickPeriodically();
+-}
++void CanRecvHandler::start() { tickPeriodically(); }
+ 
+-void CanRecvHandler::tick() {
+-  this->can_if->readDataBlocking();
+-}
++void CanRecvHandler::tick() { this->can_if->readDataBlocking(); }
+ 
+ void CanRecvHandler::stop() {}
+ 
+-}  // namespace str
+\ No newline at end of file
++} // namespace str
+\ No newline at end of file
