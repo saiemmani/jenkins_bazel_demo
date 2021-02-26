@@ -1,9 +1,7 @@
 
 ## str.Bms
-
 #### Files 
-[BmsComponent.hpp](.././main/bms/BmsComponent.hpp) 
-
+[BmsComponent.hpp](./BmsComponent.hpp) 
 #### Description 
  
 
@@ -35,10 +33,8 @@
 --- 
 
 ## str.CanRecvHandler
-
 #### Files 
-[CanRecvHandler.hpp](.././main/bms/CanRecvHandler.hpp) 
-
+[CanRecvHandler.hpp](./CanRecvHandler.hpp) 
 #### Description 
  
 
