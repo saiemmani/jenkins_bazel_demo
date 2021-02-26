@@ -18,17 +18,18 @@ pipeline {
                 sh 'echo $(pwd)'
             }
         }
-        stage('Push'){
-            steps{
-                sh 'git add ./linting'
-                sh 'git commit -am "added linting"'
-                sh "git push origin master"
-            }
-        }
         stage('Generate_documentation'){
             steps{
                 sh 'python3 generate_documentation.py -r ./main'
                 sh 'echo $(pwd)'
+            }
+        }
+        stage('Push'){
+            steps{
+                sh 'git add ./linting'
+                sh 'git add ./main'
+                sh 'git commit -am "added from jenkins"'
+                sh "git push origin master"
             }
         }
         stage('Deploy') {
