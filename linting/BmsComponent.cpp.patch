@@ -1,5 +1,5 @@
 --- ./main/bms/BmsComponent.cpp	2021-02-26 11:58:53.706070320 +0100
-+++ ./linting/BmsComponent.cpp	2021-02-26 14:15:54.539148375 +0100
++++ ./linting/BmsComponent.cpp	2021-02-26 14:16:14.314937184 +0100
 @@ -21,8 +21,9 @@
  
  using namespace std;
