@@ -16,6 +16,13 @@ pipeline {
             steps{
                 sh 'python3 format-code.py -r ./main'
                 sh 'echo $(pwd)'
+                sh 'git add ./linting'
+                sh 'git commit -m "Added Linting" '
+            }
+        }
+        stage('Push'){
+            steps{
+                sh 'git push origin master'
             }
         }
         stage('Deploy') {
