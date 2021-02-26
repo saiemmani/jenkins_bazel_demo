@@ -27,7 +27,8 @@ pipeline {
         }
         stage('Generate_documentation'){
             steps{
-                sh 'python3 format-code.py -r ./main'
+                sh 'python3 generate_documentation.py -r ./main'
+                sh 'echo $(pwd)'
             }
         }
         stage('Deploy') {
