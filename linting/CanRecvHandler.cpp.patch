@@ -1,5 +1,5 @@
 --- ./main/bms/CanRecvHandler.cpp	2021-02-26 11:58:53.706070320 +0100
-+++ ./linting/CanRecvHandler.cpp	2021-02-26 14:14:54.359790082 +0100
++++ ./linting/CanRecvHandler.cpp	2021-02-26 14:15:14.663573746 +0100
 @@ -13,14 +13,10 @@
  
  namespace str {
