@@ -1,5 +1,5 @@
 --- ./main/bms/BmsComponent.hpp	2021-02-26 11:58:53.706070320 +0100
-+++ ./linting/BmsComponent.hpp	2021-02-26 14:13:54.756424085 +0100
++++ ./linting/BmsComponent.hpp	2021-02-26 14:14:14.424215065 +0100
 @@ -41,37 +41,42 @@
      // {MKNXVEHCL0042M,
      //  {"MKNXVEHCL0042M", "BMS: Charging Active", "Robot is in Charging."}},
