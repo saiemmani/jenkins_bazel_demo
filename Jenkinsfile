@@ -13,8 +13,10 @@ pipeline {
             }
         }
         stage('Linting'){
-            sh 'python3 format-code.py -r ./main'
-            sh 'echo $(pwd)'
+            steps{
+                sh 'python3 format-code.py -r ./main'
+                sh 'echo $(pwd)'
+            }
         }
         stage('Deploy') {
             steps {
