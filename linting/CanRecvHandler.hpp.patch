@@ -1,0 +1,21 @@
+--- ./main/bms/CanRecvHandler.hpp	2021-02-26 11:58:53.706070320 +0100
++++ ./linting/CanRecvHandler.hpp	2021-02-26 11:58:57.114034210 +0100
+@@ -23,14 +23,14 @@
+ 
+ namespace str {
+ class CanRecvHandler : public isaac::alice::Codelet {
+- public:
++public:
+   void start() override;
+   void tick() override;
+   void stop() override;
+   ISAAC_PARAM(std::string, bms_node);
+ 
+-  CanInterface* can_if;
++  CanInterface *can_if;
+ };
+-}  // namespace str
++} // namespace str
+ 
+ ISAAC_ALICE_REGISTER_CODELET(str::CanRecvHandler);
+\ No newline at end of file
