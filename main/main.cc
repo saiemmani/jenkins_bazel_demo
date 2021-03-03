@@ -10,5 +10,5 @@ int main(int argc, char** argv) {
   };
   std::cout << obj.dump(4) << std::endl;
   std::cout<< greet("Maroun") << std::endl;
-  std::cout<< "Some extra source code by Maroun" << endl;
+  std::cout<< "Some extra source code by Maroun" << std::endl;
 }
