@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'bazel build ...'
-                publishChecks name: 'pipeline check', title: 'pipeline ', summary: '# A pipeline check example'
+                //publishChecks name: 'pipeline check', title: 'pipeline ', summary: '# A pipeline check example'
             }
         }  
     }
