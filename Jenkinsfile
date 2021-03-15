@@ -7,10 +7,9 @@ pipeline {
                 sh 'bazel build ...'
             }
         }
-
-                stage('test') {
+              stage('Test') {
             steps {
-                sh 'echo fjewfhwoei'
+                sh 'echo ehfweu'
             }
         }
     }
