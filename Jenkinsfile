@@ -12,5 +12,11 @@ pipeline {
                 sh 'echo ehfweu'
             }
         }
+
+                      stage('Deploy') {
+            steps {
+                sh 'echo deploying'
+            }
+        }
     }
 }
