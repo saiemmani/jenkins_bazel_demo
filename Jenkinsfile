@@ -11,6 +11,7 @@ pipeline {
               stage('Test') {
             steps {
                 sh 'echo ehfweu'
+                publishChecks name: 'example', title: 'Pipeline Check', summary: 'check through pipeline'
             }
         }
 
