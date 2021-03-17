@@ -16,7 +16,6 @@ pipeline {
                         publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
                     }
                     catch (Exception e){
-                        echo e
                         publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Failed Test' , status = 'FAILED'
                     }
                 }
