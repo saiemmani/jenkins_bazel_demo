@@ -10,7 +10,7 @@ pipeline {
         }
               stage('Test') {
             steps {
-                sh 'echo ehfweu'
+                sh 'echox ehfweu'
                 publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
             }
         }
