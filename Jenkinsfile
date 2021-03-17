@@ -22,6 +22,7 @@ pipeline {
             stage('Deploy') {
             steps {
                 sh 'sleep 7'
+                sh 'monkaS'
                 sh 'echo deploying'
                 publishChecks name : 'DeploymentCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts'
             }
