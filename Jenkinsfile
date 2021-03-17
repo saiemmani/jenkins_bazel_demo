@@ -21,6 +21,7 @@ pipeline {
 
             stage('Deploy') {
             steps {
+                script{
                 try{
                 sh 'sleep 7'
                 sh 'echo deploying'
@@ -28,6 +29,7 @@ pipeline {
                 }
                 catch (exp){
                     publishChecks name : 'Deploy Check Failure' , title: 'Deployment Check Failure', summary :'Deploying the build artifacts'
+                }
                 }
             }
             
