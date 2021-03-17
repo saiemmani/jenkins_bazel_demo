@@ -8,10 +8,16 @@ pipeline {
                 publishChecks name: 'BuildCheck', title: 'Build Check', summary: 'Calling Bazel build on the repo'
             }
         }
-              stage('Test') {
+            stage('Test') {
             steps {
-                sh 'echox ehfweu'
-                publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
+                script{
+                    try {
+                        sh 'echox ehfweu'
+                        publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
+                    }
+                    catch {
+                        publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Failed Test' , status = 'FAILED'
+                    }
             }
         }
 
