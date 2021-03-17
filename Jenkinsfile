@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh 'sleep 7'
                 sh 'echo deploying'
-                publishChecks name : 'monkaCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts'
+                publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts'
             }
             
         }
