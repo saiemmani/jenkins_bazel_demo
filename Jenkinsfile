@@ -16,15 +16,16 @@ pipeline {
                         publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
                     }
                     catch (Exception e){
+                        echo e
                         publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Failed Test' , status = 'FAILED'
                     }
+                }
             }
         }
 
             stage('Deploy') {
             steps {
                 sh 'echo deploying'
-                echo e
                 publishChecks name : 'DeploymentCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts'
             }
             
