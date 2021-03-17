@@ -26,7 +26,7 @@ pipeline {
                 sh 'sleep 7'
                 sh 'echo deploying'
                 sh 'exit -1'
-                publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts' , status : 'Failure'
+                publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts' , status : 'FAILURE'
                 }
                 catch (exp){
                     publishChecks name : 'Deploy Check Failure' , title: 'Deployment Check Failure', summary :'Deploying the build artifacts'
