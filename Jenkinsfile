@@ -29,7 +29,7 @@ pipeline {
                 publishChecks name : 'DeployCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts' 
                 }
                 catch (exp){
-                    publishChecks name : 'Deploy Check Failure' , title: 'Deployment Check Failure', summary :'Deploying the build artifacts', conclusion : 'FAILURE' , text : exp
+                    publishChecks name : 'Deploy Check Failure' , title: 'Deployment Check Failure', summary :'Deploying the build artifacts', conclusion : 'FAILURE' , text : exp.message
                     sh 'exit -1'
                 }
                 }
