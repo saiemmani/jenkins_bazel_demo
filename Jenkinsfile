@@ -11,13 +11,8 @@ pipeline {
             stage('Test') {
             steps {
                 script{
-                    try {
-                        sh 'echox ehfweu'
-                        publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
-                    }
-                    catch (Exception e){
-                        publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Failed Test'
-                    }
+                    sh 'echo ehfweu'
+                    publishChecks name: 'TestCheck', title: 'Test Check', summary: 'Calling Bazel test on the repo'
                 }
             }
         }
