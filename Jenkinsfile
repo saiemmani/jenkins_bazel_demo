@@ -18,8 +18,9 @@ pipeline {
             stage('Deploy') {
             steps {
                 sh 'echo deploying'
+                publishChecks name : 'DeploymentCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts'
             }
-            publishChecks name : 'DeploymentCheck' , title: 'Deployment Check', summary :'Deploying the build artifacts'
+            
         }
     }
 }
