@@ -11,15 +11,11 @@ on:
     branches: [ master ]
 
 jobs:
-
-  build:
-    name: Build
-    runs-on: self-hosted
+  jenkinsfile-runner-prepackaged:
+    runs-on: ubuntu-latest
     steps:
-    - name: trigger single Job
-      uses: appleboy/jenkins-action@master
-      with:
-        url: "http://localhost:8080"
-        user: "Maroun"
-        token: "118601319dbc724210ec62421dd86ceb74"
-        job: "PipelineX"
+    - uses: actions/checkout@master
+    - name: jenkinsfile-runner-prepackaged
+      uses: jenkinsci/jenkinsfile-runner-github-actions/jenkinsfile-runner-prepackaged@master
+      env:
+        GITHUB_TOKEN: "0426779db89b36f0e014a327b8cc46bf794bd1c2"
