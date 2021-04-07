@@ -1,0 +1,6 @@
+# action.yml
+name: 'Hello World'
+description: 'Running the Hello World Image'
+runs:
+  using: 'docker'
+  image: 'hello-world'
