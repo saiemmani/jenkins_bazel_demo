@@ -7,8 +7,4 @@ jobs:
     runs-on: self-hosted # linux required if you want to use docker
     steps:
     # Those steps are executed directly on the VM
-    - run: clang-format --version
-    # Those steps are actions, which may run inside a container
-    - uses: isaacbuild:latest
-      with:
-        args: -u root -e LANG=C.UTF-8 -v /home/fyprobotics/isaac:/src/workspace -w /src/workspace --mount source=isaac-sdk-build-cache,target=/root/.cache --runtime=nvidia
+    - run: echo ${GITHUB_REF##*/}
