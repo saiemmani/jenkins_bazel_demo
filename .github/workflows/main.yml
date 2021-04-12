@@ -1,0 +1,10 @@
+name: CI
+
+on: [push]
+
+jobs:
+  myjob:
+    runs-on: self-hosted # linux required if you want to use docker
+    steps:
+    # Those steps are executed directly on the VM
+    - run: echo ${GITHUB_REF##*/}
