@@ -16,7 +16,7 @@ jobs:
       with:
         source-directory: 'output'
         destination-github-username: 'marouanyli'
-        destination-repository-name: 'jenkins_bazel'
+        destination-repository-name: 'jenkinsbazel'
         user-email: marounayle@gmail.com
         target-branch: release
     - run: echo Finished
