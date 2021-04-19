@@ -16,7 +16,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN }}
       with:
-        source-directory: $(pwd)
+        source-directory: .
         destination-github-username: 'marounayli'
         destination-repository-name: 'jenkinsbazel'
         user-email: marounayle@gmail.com
