@@ -19,3 +19,4 @@ jobs:
         destination-repository-name: 'jenkins_bazel'
         user-email: marounayle@gmail.com
         target-branch: release
+    - run: echo Finished
