@@ -20,6 +20,6 @@ jobs:
         destination-github-username: 'marounayli'
         destination-repository-name: 'jenkinsbazel'
         user-email: marounayle@gmail.com
-        target-branch: master
+        target-branch: x
     - run: echo Finished
     - run: echo  ${{ github.repository }}
