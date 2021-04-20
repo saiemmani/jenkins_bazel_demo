@@ -24,6 +24,5 @@ jobs:
     - run: echo Finished
     - run: echo  $(pwd)
     - run: |
-          cd ..
-          git clone https://${{ secrets.API_TOKEN }}@github.com/marounayli/jenkinsbazel.git
+          cd .. & git clone https://${{ secrets.API_TOKEN }}@github.com/marounayli/jenkinsbazel.git
           echo $(pwd)
