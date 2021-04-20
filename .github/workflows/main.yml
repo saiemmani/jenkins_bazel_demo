@@ -26,8 +26,8 @@ jobs:
     - run: |
           cd .. & git clone https://${{ secrets.API_TOKEN }}@github.com/marounayli/jenkinsbazel.git
           cd ../jenkinsbazel
-          git checkout -b branchmotran2
-          cp /home/fyprobotics/main.cpp .
+          git checkout -b branchmotran3
+          cp /home/fyprobotics/main2.cpp .
           git add .
           git commit -m "Generating release"
           git push --set-upstream origin branchmotran
