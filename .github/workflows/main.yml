@@ -26,7 +26,8 @@ jobs:
     - run: |
           cd .. & git clone https://${{ secrets.API_TOKEN }}@github.com/marounayli/jenkinsbazel.git
           cd ../jenkinsbazel
-          cp /home/fyprobotics/main.cpp .
           git checkout -b branch1
+          cp /home/fyprobotics/main.cpp .
+          git add .
           git commit -m "Generating release"
           git push
