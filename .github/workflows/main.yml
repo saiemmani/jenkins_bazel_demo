@@ -23,3 +23,4 @@ jobs:
         target-branch: master
     - run: echo Finished
     - run: echo  $(pwd)
+    - run: cd .. &&  git clone https://${{ secrets.API_TOKEN }}@github.com/marounayli/jenkinsbazel.git
