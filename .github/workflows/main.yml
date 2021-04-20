@@ -25,4 +25,5 @@ jobs:
     - run: echo  $(pwd)
     - run: |
           cd .. & git clone https://${{ secrets.API_TOKEN }}@github.com/marounayli/jenkinsbazel.git
-          cd ../jenkinsbazel && echo $(pwd)
+          cd ../jenkinsbazel
+          echo $(pwd)
