@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      -master
+      - master
 jobs:
   myjob:
     runs-on: self-hosted # linux required if you want to use docker
